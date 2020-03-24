@@ -1,11 +1,15 @@
 <template>
   <div style="padding-top: 50px">
-    <button @click="addBarWW(partIndex)">Add Bar++</button>
+    <button @click="addBar(partIndex)">Add Bar++</button>
     <!-- <h1 class="is-size-6">{{ part.name }}</h1> -->
-    <div />
-    <div />
     <div class="columns is-multiline">
-      <Bar v-for="(bar, barIndex) in part.bars" :key="barIndex" :bar="bar" />
+      <Bar
+        v-for="(bar, barIndex) in part.bars"
+        :key="barIndex"
+        :bar="bar"
+        :part-index="partIndex"
+        :bar-index="barIndex"
+      />
     </div>
   </div>
 </template>
@@ -31,10 +35,7 @@ export default {
   methods: {
     ...mapActions('chord', {
       addBar: 'addBar'
-    }),
-    addBarWW(partIndex) {
-      this.addBar(partIndex)
-    }
+    })
   }
 }
 </script>

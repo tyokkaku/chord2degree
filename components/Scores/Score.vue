@@ -2,13 +2,13 @@
   <div>
     <h1 class="is-size-3">Score</h1>
     <span>tonic:</span> <input v-model="defaultTonic" />
-    <button @click="addPart">addPart ++</button>
     <Part
       v-for="(part, partIndex) in score"
       :key="partIndex"
       :part="part"
       :part-index="partIndex"
     />
+    <button @click="addPart">addPart ++</button>
   </div>
 </template>
 

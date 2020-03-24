@@ -1,13 +1,21 @@
 <template>
   <div class="column is-one-quarter bar">
-    <!-- <h1 class="is-size-6">Bar</h1> -->
+    <button @click="addNote({ partIndex, barIndex })">Add Note++</button>
     <div class="columns">
-      <Note v-for="(note, index) in bar" :key="index" :note="note" />
+      <Note
+        v-for="(note, noteIndex) in bar"
+        :key="noteIndex"
+        :note="note"
+        :part-index="partIndex"
+        :bar-index="barIndex"
+        :note-index="noteIndex"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import Note from '~/components/Scores/Note'
 
 export default {
@@ -18,7 +26,20 @@ export default {
     bar: {
       required: true,
       type: Array
+    },
+    partIndex: {
+      required: true,
+      type: Number
+    },
+    barIndex: {
+      required: true,
+      type: Number
     }
+  },
+  methods: {
+    ...mapActions('chord', {
+      addNote: 'addNote'
+    })
   }
 }
 </script>

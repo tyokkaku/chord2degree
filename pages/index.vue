@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="is-size-2">chord2degree!!</h1>
+    <h1 class="is-size-2">chord2degree</h1>
     <Score />
   </div>
 </template>

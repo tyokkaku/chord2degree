@@ -1,4 +1,4 @@
-// import Vue from 'vue'
+import Vue from 'vue'
 import initialScore from '~/data/initialScore'
 // import initialPart from '~/data/initialPart'
 // import testScore from '~/data/testScore'
@@ -15,8 +15,11 @@ export const actions = {
   addBar: ({ commit }, payload) => {
     commit('appendBar', payload)
   },
-  editNote: () => {
-    console.log('editnote')
+  addNote: ({ commit }, payload) => {
+    commit('appendNote', payload)
+  },
+  editNoteAt: ({ commit }, payload) => {
+    commit('editNote', payload)
   }
 }
 
@@ -31,6 +34,15 @@ export const mutations = {
   },
   appendBar: (state, partIndex) => {
     state.score[partIndex].bars.push(['', ''])
+  },
+  appendNote: (state, { partIndex, barIndex }) => {
+    state.score[partIndex].bars[barIndex].push('')
+  },
+  editNote: (state, { partIndex, barIndex, noteIndex, chord }) => {
+    // editNote: (state, { bar, noteIndex, chord }) => {
+    // console.log(bar, noteIndex, chord)
+    // state.score[partIndex].bars[barIndex][noteIndex]
+    Vue.set(state.score[partIndex].bars[barIndex], [noteIndex], chord)
   }
 }
 
