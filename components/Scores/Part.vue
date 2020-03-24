@@ -14,6 +14,7 @@
         :part-tonic="partTonic"
         :bar-index="barIndex"
         :default-tonic="defaultTonic"
+        :show-contents="showContents"
       />
     </div>
   </div>

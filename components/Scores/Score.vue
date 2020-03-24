@@ -3,13 +3,21 @@
     <div class="toggleButtonArea">
       <div class="field">
         <input
-          id="switchThinColorDefault"
+          id="partTonic"
           type="checkbox"
-          name="switchThinColorDefault"
           class="switch is-thin is-rtl"
           @click="toggle('partTonicInput')"
         />
-        <label for="switchThinColorDefault">Tonic(Part)</label>
+        <label for="partTonic">Tonic(Part)</label>
+      </div>
+      <div class="field">
+        <input
+          id="barTonic"
+          type="checkbox"
+          class="switch is-thin is-rtl"
+          @click="toggle('barTonicInput')"
+        />
+        <label for="barTonic">Tonic(Bar)</label>
       </div>
     </div>
     <span>tonic:</span> <input v-model="defaultTonic" />
