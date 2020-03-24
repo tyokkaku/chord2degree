@@ -14,7 +14,6 @@ const testScore = [
     ['D', 'A']
   ]),
   createPart('サビ', 'G', [
-    ['C', 'F'],
     ['C', 'D'],
     ['D', 'A', 'A', 'B'],
     ['D', 'A'],

@@ -1,5 +1,10 @@
 <template>
   <div style="padding-top: 50px">
+    pTonic:<input
+      v-model="partTonic"
+      type="text"
+      @input="setTonicAt({ partIndex, partTonic })"
+    />
     <button @click="addBar(partIndex)">Add Bar++</button>
     <!-- <h1 class="is-size-6">{{ part.name }}</h1> -->
     <div class="columns is-multiline">
@@ -38,9 +43,15 @@ export default {
       type: String
     }
   },
+  data() {
+    return {
+      partTonic: ''
+    }
+  },
   methods: {
     ...mapActions('chord', {
-      addBar: 'addBar'
+      addBar: 'addBar',
+      setTonicAt: 'setTonicAt'
     })
   }
 }

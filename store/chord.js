@@ -20,6 +20,9 @@ export const actions = {
   },
   editNoteAt: ({ commit }, payload) => {
     commit('editNote', payload)
+  },
+  setTonicAt: ({ commit }, payload) => {
+    commit('setTonic', payload)
   }
 }
 
@@ -39,10 +42,11 @@ export const mutations = {
     state.score[partIndex].bars[barIndex].push('')
   },
   editNote: (state, { partIndex, barIndex, noteIndex, chord }) => {
-    // editNote: (state, { bar, noteIndex, chord }) => {
-    // console.log(bar, noteIndex, chord)
-    // state.score[partIndex].bars[barIndex][noteIndex]
     Vue.set(state.score[partIndex].bars[barIndex], [noteIndex], chord)
+  },
+  setTonic: (state, { partIndex, partTonic }) => {
+    console.log(partIndex, partTonic)
+    Vue.set(state.score[partIndex], 'tonic', partTonic)
   }
 }
 
