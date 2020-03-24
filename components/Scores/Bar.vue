@@ -5,7 +5,7 @@
       <Note
         v-for="(note, noteIndex) in bar"
         :key="noteIndex"
-        :note="note"
+        :note="degreeName[noteIndex]"
         :part-index="partIndex"
         :bar-index="barIndex"
         :note-index="noteIndex"
@@ -16,6 +16,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import { Progression } from '@tonaljs/tonal'
 import Note from '~/components/Scores/Note'
 
 export default {
@@ -31,9 +32,25 @@ export default {
       required: true,
       type: Number
     },
+    partTonic: {
+      required: true,
+      type: String
+    },
     barIndex: {
       required: true,
       type: Number
+    },
+    defaultTonic: {
+      required: true,
+      type: String
+    }
+  },
+  computed: {
+    degreeName() {
+      return Progression.toRomanNumerals(
+        this.partTonic ? this.partTonic : this.defaultTonic,
+        this.bar
+      )
     }
   },
   methods: {
@@ -46,7 +63,6 @@ export default {
 
 <style lang="sass" scoped>
 .bar
-  // padding-top: 5px
   border-left: 1px solid #ccc
   &:nth-child(4n)
     border-right: 1px solid #ccc

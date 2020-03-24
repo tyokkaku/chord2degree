@@ -26,3 +26,5 @@ const testScore = [
 ]
 
 export default testScore
+
+// Score[part{name,tonic,bars[[note,note]]}]

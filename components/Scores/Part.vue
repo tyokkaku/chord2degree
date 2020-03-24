@@ -8,7 +8,9 @@
         :key="barIndex"
         :bar="bar"
         :part-index="partIndex"
+        :part-tonic="part.tonic"
         :bar-index="barIndex"
+        :default-tonic="defaultTonic"
       />
     </div>
   </div>
@@ -30,6 +32,10 @@ export default {
     partIndex: {
       required: true,
       type: Number
+    },
+    defaultTonic: {
+      required: true,
+      type: String
     }
   },
   methods: {

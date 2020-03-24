@@ -7,6 +7,7 @@
       :key="partIndex"
       :part="part"
       :part-index="partIndex"
+      :default-tonic="defaultTonic"
     />
     <button @click="addPart">addPart ++</button>
   </div>

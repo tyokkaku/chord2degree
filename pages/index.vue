@@ -11,9 +11,6 @@ import Score from '~/components/Scores/Score.vue'
 
 export default {
   name: 'Index',
-  // mounted() {
-  //   this.hello()
-  // },
   components: {
     Score
   },
