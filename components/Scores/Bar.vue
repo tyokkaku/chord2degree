@@ -1,6 +1,7 @@
 <template>
   <div class="column is-one-quarter bar">
     <button @click="addNote({ partIndex, barIndex })">Add Note++</button>
+    <span>bTonic:</span> <input v-model="barTonic" />
     <div class="columns">
       <Note
         v-for="(note, noteIndex) in bar"
@@ -45,10 +46,16 @@ export default {
       type: String
     }
   },
+  data() {
+    return {
+      barTonic: ''
+    }
+  },
   computed: {
     degreeName() {
       return Progression.toRomanNumerals(
-        this.partTonic ? this.partTonic : this.defaultTonic,
+        // this.partTonic ? this.partTonic : this.defaultTonic,
+        this.barTonic ? this.barTonic : this.defaultTonic,
         this.bar
       )
     }
