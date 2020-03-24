@@ -1,7 +1,10 @@
 <template>
   <div class="column is-one-quarter bar">
     <button @click="addNote({ partIndex, barIndex })">Add Note++</button>
-    <span>bTonic:</span> <input v-model="barTonic" />
+    <!-- <span>bTonic:</span> <input v-model="barTonic" /> -->
+    <span v-if="showContents.includes('barTonicInput')">
+      bTonic:<input v-model="barTonic" type="text" />
+    </span>
     <div class="columns">
       <Note
         v-for="(note, noteIndex) in bar"
@@ -44,6 +47,10 @@ export default {
     defaultTonic: {
       required: true,
       type: String
+    },
+    showContents: {
+      required: true,
+      type: Array
     }
   },
   data() {
