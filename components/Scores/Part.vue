@@ -1,10 +1,6 @@
 <template>
   <div style="padding-top: 50px">
-    <!-- pTonic:<input
-      v-model="partTonic"
-      type="text"
-      @input="setTonicAt({ partIndex, partTonic })"
-    /> -->
+    pTonic:<input v-model="partTonic" type="text" />
     <button @click="addBar(partIndex)">Add Bar++</button>
     <!-- <h1 class="is-size-6">{{ part.name }}</h1> -->
     <div class="columns is-multiline">
@@ -13,7 +9,7 @@
         :key="barIndex"
         :bar="bar"
         :part-index="partIndex"
-        :part-tonic="part.tonic"
+        :part-tonic="partTonic"
         :bar-index="barIndex"
         :default-tonic="defaultTonic"
       />
@@ -50,8 +46,7 @@ export default {
   },
   methods: {
     ...mapActions('chord', {
-      addBar: 'addBar',
-      setTonicAt: 'setTonicAt'
+      addBar: 'addBar'
     })
   }
 }

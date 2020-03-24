@@ -53,11 +53,13 @@ export default {
   },
   computed: {
     degreeName() {
-      return Progression.toRomanNumerals(
-        // this.partTonic ? this.partTonic : this.defaultTonic,
-        this.barTonic ? this.barTonic : this.defaultTonic,
-        this.bar
-      )
+      if (this.barTonic) {
+        return Progression.toRomanNumerals(this.barTonic, this.bar)
+      } else if (this.partTonic) {
+        return Progression.toRomanNumerals(this.partTonic, this.bar)
+      } else {
+        return Progression.toRomanNumerals(this.defaultTonic, this.bar)
+      }
     }
   },
   methods: {

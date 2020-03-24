@@ -1,7 +1,7 @@
 import createPart from './util/createPart'
 
 const testScore = [
-  createPart('Aメロ', 'C', [
+  createPart('Aメロ', [
     ['D', 'A'],
     ['B', 'F'],
     ['G', 'D'],

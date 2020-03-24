@@ -1,7 +1,6 @@
-const createPart = (name, tonic, bars) => {
+const createPart = (name, bars) => {
   return {
     name,
-    tonic,
     bars
   }
 }

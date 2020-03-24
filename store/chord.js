@@ -20,16 +20,16 @@ export const actions = {
   },
   editNoteAt: ({ commit }, payload) => {
     commit('editNote', payload)
-  },
-  setTonicAt: ({ commit }, payload) => {
-    commit('setTonic', payload)
   }
+  // setTonicAt: ({ commit }, payload) => {
+  //   commit('setTonic', payload)
+  // }
 }
 
 export const mutations = {
   appendPart: (state) => {
     state.score.push(
-      createPart('', '', [
+      createPart('', [
         ['', ''],
         ['', '']
       ])
@@ -43,11 +43,11 @@ export const mutations = {
   },
   editNote: (state, { partIndex, barIndex, noteIndex, chord }) => {
     Vue.set(state.score[partIndex].bars[barIndex], [noteIndex], chord)
-  },
-  setTonic: (state, { partIndex, partTonic }) => {
-    console.log(partIndex, partTonic)
-    Vue.set(state.score[partIndex], 'tonic', partTonic)
   }
+  // setTonic: (state, { partIndex, partTonic }) => {
+  //   console.log(partIndex, partTonic)
+  //   Vue.set(state.score[partIndex], 'tonic', partTonic)
+  // }
 }
 
 export const getters = {}
