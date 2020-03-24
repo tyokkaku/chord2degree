@@ -1,6 +1,17 @@
 <template>
   <div>
-    <h1 class="is-size-3">Score</h1>
+    <div class="toggleButtonArea">
+      <div class="field">
+        <input
+          id="switchThinColorDefault"
+          type="checkbox"
+          name="switchThinColorDefault"
+          class="switch is-thin is-rtl"
+          @click="toggle('partTonicInput')"
+        />
+        <label for="switchThinColorDefault">Tonic(Part)</label>
+      </div>
+    </div>
     <span>tonic:</span> <input v-model="defaultTonic" />
     <Part
       v-for="(part, partIndex) in score"
@@ -8,6 +19,7 @@
       :part="part"
       :part-index="partIndex"
       :default-tonic="defaultTonic"
+      :show-contents="showContents"
     />
     <button @click="addPart">addPart ++</button>
   </div>
@@ -23,7 +35,8 @@ export default {
   },
   data() {
     return {
-      defaultTonic: 'C'
+      defaultTonic: 'C',
+      showContents: []
     }
   },
   computed: {
@@ -34,9 +47,21 @@ export default {
   methods: {
     ...mapActions('chord', {
       addPart: 'addPart'
-    })
+    }),
+    toggle(data) {
+      if (this.showContents.includes(data)) {
+        this.showContents = this.showContents.filter(
+          (element) => element !== data
+        )
+      } else {
+        this.showContents.push(data)
+      }
+    }
   }
 }
 </script>
 
-<style></style>
+<style lang="sass" scoped>
+.toggleButtonArea
+  text-align: right
+</style>

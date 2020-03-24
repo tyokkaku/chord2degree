@@ -1,6 +1,8 @@
 <template>
   <div style="padding-top: 50px">
-    pTonic:<input v-model="partTonic" type="text" />
+    <span v-if="showContents.includes('partTonicInput')">
+      pTonic:<input v-model="partTonic" type="text" />
+    </span>
     <button @click="addBar(partIndex)">Add Bar++</button>
     <!-- <h1 class="is-size-6">{{ part.name }}</h1> -->
     <div class="columns is-multiline">
@@ -37,6 +39,10 @@ export default {
     defaultTonic: {
       required: true,
       type: String
+    },
+    showContents: {
+      required: true,
+      type: Array
     }
   },
   data() {
