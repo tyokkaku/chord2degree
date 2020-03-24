@@ -3,7 +3,12 @@
     <h1 class="is-size-3">Score</h1>
     <span>tonic:</span> <input v-model="defaultTonic" />
     <button @click="addPart">addPart ++</button>
-    <Part v-for="(part, index) in score" :key="index" :part="part" />
+    <Part
+      v-for="(part, partIndex) in score"
+      :key="partIndex"
+      :part="part"
+      :part-index="partIndex"
+    />
   </div>
 </template>
 
@@ -25,9 +30,6 @@ export default {
       score: 'score'
     })
   },
-  // mounted() {
-  //   console.log(this.score)
-  // },
   methods: {
     ...mapActions('chord', {
       addPart: 'addPart'

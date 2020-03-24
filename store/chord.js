@@ -1,26 +1,37 @@
+// import Vue from 'vue'
 import initialScore from '~/data/initialScore'
-import initialPart from '~/data/initialPart'
+// import initialPart from '~/data/initialPart'
+// import testScore from '~/data/testScore'
+import createPart from '~/data/util/createPart'
 
 export const state = {
   score: initialScore
 }
 
-export const mutations = {
-  appendPart: (state) => {
-    state.score.push(initialPart)
-  }
-}
-
 export const actions = {
-  addPart: ({ commit }, payload) => {
-    commit('appendPart', payload)
+  addPart: ({ commit }) => {
+    commit('appendPart')
+  },
+  addBar: ({ commit }, payload) => {
+    commit('appendBar', payload)
   },
   editNote: () => {
     console.log('editnote')
-  },
-
-  hello: () => {
-    console.log('hello')
   }
 }
+
+export const mutations = {
+  appendPart: (state) => {
+    state.score.push(
+      createPart('', '', [
+        ['', ''],
+        ['', '']
+      ])
+    )
+  },
+  appendBar: (state, partIndex) => {
+    state.score[partIndex].bars.push(['', ''])
+  }
+}
+
 export const getters = {}

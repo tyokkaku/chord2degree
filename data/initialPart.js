@@ -1,6 +1,15 @@
 import createPart from './util/createPart'
 
-const initialPart = createPart('A', '', [
+// const initialPart = {
+//   name: 'nextPart',
+//   tonic: '',
+//   bars: [
+//     ['', ''],
+//     ['', '']
+//   ]
+// }
+
+const initialPart = createPart('', '', [
   ['', ''],
   ['', ''],
   ['', ''],

@@ -1,4 +1,4 @@
-import { createPart } from './util/createPart'
+import createPart from './util/createPart'
 
 const testScore = [
   createPart('Aメロ', 'C', [
