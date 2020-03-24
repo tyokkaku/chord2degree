@@ -1,7 +1,7 @@
 import createPart from './util/createPart'
 
 const initialScore = [
-  createPart('', [
+  createPart(0, '', [
     ['', ''],
     ['', ''],
     ['', ''],

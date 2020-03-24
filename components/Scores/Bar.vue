@@ -1,6 +1,6 @@
 <template>
   <div class="column is-one-quarter bar">
-    <button @click="addNote({ partIndex, barIndex })">Add Note++</button>
+    <button @click="addNoteAt({ partIndex, barIndex })">Add Note++</button>
     <!-- <span>bTonic:</span> <input v-model="barTonic" /> -->
     <span v-if="showContents.includes('barTonicInput')">
       bTonic:<input v-model="barTonic" type="text" />
@@ -71,7 +71,7 @@ export default {
   },
   methods: {
     ...mapActions('chord', {
-      addNote: 'addNote'
+      addNoteAt: 'addNoteAt'
     })
   }
 }

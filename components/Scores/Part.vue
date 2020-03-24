@@ -3,7 +3,7 @@
     <span v-if="showContents.includes('partTonicInput')">
       pTonic:<input v-model="partTonic" type="text" />
     </span>
-    <button @click="addBar(partIndex)">Add Bar++</button>
+    <button @click="addBarAt(partIndex)">Add Bar++</button>
     <!-- <h1 class="is-size-6">{{ part.name }}</h1> -->
     <div class="columns is-multiline">
       <Bar
@@ -17,6 +17,8 @@
         :show-contents="showContents"
       />
     </div>
+    <button @click="addPartAt(partIndex)">Add Part ++</button>
+    <button @click="removePartAt(partIndex)">Rem Part --</button>
   </div>
 </template>
 
@@ -53,7 +55,9 @@ export default {
   },
   methods: {
     ...mapActions('chord', {
-      addBar: 'addBar'
+      addBarAt: 'addBarAt',
+      addPartAt: 'addPartAt',
+      removePartAt: 'removePartAt'
     })
   }
 }

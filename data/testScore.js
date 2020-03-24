@@ -7,13 +7,13 @@ const testScore = [
     ['G', 'D'],
     ['D', 'A', 'A']
   ]),
-  createPart('Bメロ', 'C', [
+  createPart('Bメロ', [
     ['G', 'A'],
     ['D', 'A', 'A'],
     ['B', 'F'],
     ['D', 'A']
   ]),
-  createPart('サビ', 'G', [
+  createPart('サビ', [
     ['C', 'D'],
     ['D', 'A', 'A', 'B'],
     ['D', 'A'],

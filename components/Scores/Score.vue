@@ -23,13 +23,12 @@
     <span>tonic:</span> <input v-model="defaultTonic" />
     <Part
       v-for="(part, partIndex) in score"
-      :key="partIndex"
+      :key="part.id"
       :part="part"
       :part-index="partIndex"
       :default-tonic="defaultTonic"
       :show-contents="showContents"
     />
-    <button @click="addPart">addPart ++</button>
   </div>
 </template>
 
@@ -53,9 +52,7 @@ export default {
     })
   },
   methods: {
-    ...mapActions('chord', {
-      addPart: 'addPart'
-    }),
+    ...mapActions('chord', {}),
     toggle(data) {
       if (this.showContents.includes(data)) {
         this.showContents = this.showContents.filter(
