@@ -29,14 +29,13 @@
       <span
         v-if="showContents.includes('barTonicInput')"
         class="is-size-6"
-        style="vertical-align: middle"
+        style="vertical-align: middle; float:right"
       >
         <input
           v-model="barTonic"
-          placeholder="tonic"
           type="text"
           style="width:50px"
-          class="input is-small"
+          class="input is-small is-rounded"
         />
       </span>
     </div>

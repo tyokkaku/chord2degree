@@ -9,8 +9,8 @@
         <span class="is-size-6" style="vertical-align: middle">Tonic</span>
         <input
           v-model="defaultTonic"
-          style="width:50px"
-          class="input is-small"
+          style="width:50px;"
+          class="input is-small is-rounded"
         />
       </div>
       <Part
