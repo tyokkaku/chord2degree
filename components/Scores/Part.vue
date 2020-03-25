@@ -1,12 +1,26 @@
 <template>
-  <div style="padding-top: 50px">
-    <span v-if="showContents.includes('partTonicInput')">
-      pTonic:<input v-model="partTonic" type="text" />
-    </span>
-    <button @click="addBarAt(partIndex)">Add Bar++</button>
-    <button @click="removeBarAt(partIndex)">Remove Bar--</button>
-    <!-- <h1 class="is-size-6">{{ part.name }}</h1> -->
-    <div class="columns is-multiline">
+  <div class="partContainer">
+    <div>
+      <span v-if="showContents.includes('partTonicInput')">
+        pTonic:<input v-model="partTonic" type="text" />
+      </span>
+      <button
+        class="button is-small is-success is-light"
+        @click="addBarAt(partIndex)"
+      >
+        Bar <ion-icon name="add" />
+      </button>
+      <button
+        class="button is-small is-danger is-light"
+        @click="removeBarAt(partIndex)"
+      >
+        Bar <ion-icon name="close" />
+      </button>
+    </div>
+    <div
+      class="columns is-multiline"
+      style="margin-top: calc(1.5rem - 0.75rem)"
+    >
       <Bar
         v-for="(bar, barIndex) in part.bars"
         :key="barIndex"
@@ -18,24 +32,27 @@
         :show-contents="showContents"
       />
     </div>
-    <button
-      class="button is-small is-success is-light"
-      @click="addPartAt(partIndex)"
-    >
-      <span class="bold">
-        PART
-      </span>
-      <ion-icon name="add"></ion-icon>
-    </button>
-    <button
-      class="button is-small is-danger is-light"
-      @click="removePartAt(partIndex)"
-    >
-      <span class="bold">
-        PART
-      </span>
-      <ion-icon name="close"></ion-icon>
-    </button>
+
+    <div>
+      <button
+        class="button is-small is-success is-light"
+        @click="addPartAt(partIndex)"
+      >
+        <span class="bold">
+          PART
+        </span>
+        <ion-icon name="add" />
+      </button>
+      <button
+        class="button is-small is-danger is-light"
+        @click="removePartAt(partIndex)"
+      >
+        <span class="bold">
+          PART
+        </span>
+        <ion-icon name="close" />
+      </button>
+    </div>
   </div>
 </template>
 
@@ -81,4 +98,7 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="sass" scoped>
+.partContainer
+  margin-top: 50px
+</style>
