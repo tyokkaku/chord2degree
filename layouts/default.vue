@@ -15,6 +15,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; */
   /* box-sizing: border-box; */
-  padding: 0 15%;
+  padding: 0 12.5%;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="column">
+  <div class="column is-one-fifths">
     <div class="is-size-5">{{ note }}</div>
     <span v-if="showContents.includes('chordButton')">
       <input

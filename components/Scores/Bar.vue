@@ -1,16 +1,6 @@
 <template>
   <div class="column is-one-quarter bar" style="margin-top: 10px">
-    <span v-if="showContents.includes('addRemNoteButton')">
-      <button @click="addNoteAt({ partIndex, barIndex })">Add Note++</button>
-      <button @click="removeNoteAt({ partIndex, barIndex })">
-        Remove Note--
-      </button>
-    </span>
-    <!-- <span>bTonic:</span> <input v-model="barTonic" /> -->
-    <span v-if="showContents.includes('barTonicInput')">
-      bTonic:<input v-model="barTonic" type="text" />
-    </span>
-    <div class="columns">
+    <div class="columns is-mobile is-desktop is-multiline">
       <Note
         v-for="(note, noteIndex) in bar"
         :key="noteIndex"
@@ -21,6 +11,35 @@
         :show-contents="showContents"
       />
     </div>
+    <div>
+      <span v-if="showContents.includes('addRemNoteButton')">
+        <ion-icon
+          style="font-size: 15px; cursor:pointer; vertical-align: middle"
+          class="has-text-success"
+          name="add-circle-outline"
+          @click="addNoteAt({ partIndex, barIndex })"
+        />
+        <ion-icon
+          style="font-size: 15px; cursor:pointer; vertical-align: middle"
+          class="has-text-danger"
+          name="remove-circle-outline"
+          @click="removeNoteAt({ partIndex, barIndex })"
+        />
+      </span>
+      <span
+        v-if="showContents.includes('barTonicInput')"
+        class="is-size-6"
+        style="vertical-align: middle"
+      >
+        <input
+          v-model="barTonic"
+          placeholder="tonic"
+          type="text"
+          style="width:50px"
+          class="input is-small"
+        />
+      </span>
+    </div>
   </div>
 </template>
 
@@ -29,6 +48,7 @@ import { mapActions } from 'vuex'
 import { Progression } from '@tonaljs/tonal'
 import Note from '~/components/Scores/Note'
 
+// style="display: flex; flex-direction: column; lex-wrap: wrap; margin-right: 10px"
 export default {
   components: {
     Note
