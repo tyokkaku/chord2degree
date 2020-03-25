@@ -9,8 +9,8 @@ export const state = {
 }
 
 export const actions = {
-  addPartAt: ({ commit }) => {
-    commit('appendPart')
+  addPartAt: ({ commit }, payload) => {
+    commit('appendPart', payload)
   },
   addBarAt: ({ commit }, payload) => {
     commit('appendBar', payload)
@@ -33,17 +33,29 @@ export const actions = {
 }
 
 export const mutations = {
-  appendPart: (state) => {
+  appendPart: (state, partIndex) => {
     const ids = state.score.map((e) => e.id)
     const max = Math.max(...ids)
     const nextId = max + 1
+    const nextPartIndex = partIndex + 1
 
-    state.score.push(
+    state.score.splice(
+      nextPartIndex,
+      0,
       createPart(nextId, '', [
+        ['', ''],
+        ['', ''],
         ['', ''],
         ['', '']
       ])
     )
+
+    // state.score.push(
+    //   createPart(nextId, '', [
+    //     ['', ''],
+    //     ['', '']
+    //   ])
+    // )
   },
   appendBar: (state, partIndex) => {
     state.score[partIndex].bars.push(['', ''])
