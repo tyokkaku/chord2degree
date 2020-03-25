@@ -1,5 +1,5 @@
 <template>
-  <div class="column is-one-quarter bar">
+  <div class="column is-one-quarter bar" style="margin-top: 10px">
     <span v-if="showContents.includes('addRemNoteButton')">
       <button @click="addNoteAt({ partIndex, barIndex })">Add Note++</button>
       <button @click="removeNoteAt({ partIndex, barIndex })">

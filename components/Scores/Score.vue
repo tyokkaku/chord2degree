@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div style="margin-bottom: 200px">
     <div class="toggleButtonArea">
       <ToggleButtonArea :toggle="toggle" />
     </div>
-    <div style="clear: right">
-      <span>tonic:</span> <input v-model="defaultTonic" />
+    <div style="clear: both">
+      <h1 class="is-size-3 has-text-centered	">Title</h1>
+      <div><span>tonic:</span> <input v-model="defaultTonic" /></div>
       <Part
         v-for="(part, partIndex) in score"
         :key="part.id"
@@ -55,6 +56,5 @@ export default {
 
 <style lang="sass" scoped>
 .toggleButtonArea
-  // text-align: right
   float: right
 </style>
