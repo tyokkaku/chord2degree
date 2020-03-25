@@ -3,15 +3,6 @@
     <div class="wrapper">
       <div class="field">
         <input
-          id="addRemNote"
-          type="checkbox"
-          class="switch is-thin"
-          @click="toggle('addRemNoteButton')"
-        />
-        <label for="addRemNote">Note ±</label>
-      </div>
-      <div class="field">
-        <input
           id="chord"
           type="checkbox"
           checked="checked"
@@ -20,7 +11,40 @@
         />
         <label for="chord">Chord</label>
       </div>
+      <div class="field">
+        <input
+          id="addRemNote"
+          type="checkbox"
+          class="switch is-thin"
+          @click="toggle('addRemNoteButton')"
+        />
+        <label for="addRemNote">Note ±</label>
+      </div>
     </div>
+
+    <div class="wrapper">
+      <div class="field">
+        <input
+          id="addRemPart"
+          type="checkbox"
+          checked="checked"
+          class="switch is-thin"
+          @click="toggle('addRemPartButton')"
+        />
+        <label for="addRemPart">Part ±</label>
+      </div>
+      <div class="field">
+        <input
+          id="addRemBar"
+          type="checkbox"
+          checked="checked"
+          class="switch is-thin"
+          @click="toggle('addRemBarButton')"
+        />
+        <label for="addRemBar">Bar ±</label>
+      </div>
+    </div>
+
     <div>
       <div class="field">
         <input
@@ -58,6 +82,8 @@ export default {
 <style lang="sass" scoped>
 .container
   display: flex
+  label
+    user-select: none
 .wrapper
   margin-right: 50px
 </style>

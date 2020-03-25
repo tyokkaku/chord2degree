@@ -31,7 +31,7 @@ export default {
   data() {
     return {
       defaultTonic: 'C',
-      showContents: ['chordButton']
+      showContents: ['chordButton', 'addRemPartButton', 'addRemBarButton']
     }
   },
   computed: {
