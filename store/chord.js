@@ -26,6 +26,9 @@ export const actions = {
   },
   removeBarAt: ({ commit }, payload) => {
     commit('removeBar', payload)
+  },
+  removeNoteAt: ({ commit }, payload) => {
+    commit('removeNote', payload)
   }
 }
 
@@ -56,6 +59,9 @@ export const mutations = {
   },
   removeBar: (state, partIndex) => {
     state.score[partIndex].bars.pop()
+  },
+  removeNote: (state, { partIndex, barIndex }) => {
+    state.score[partIndex].bars[barIndex].pop()
   }
 }
 
