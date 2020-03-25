@@ -5,6 +5,8 @@
       <input
         v-model="chord"
         type="text"
+        style="width:50px; padding:2"
+        class="input is-small"
         @input="editNoteAt({ partIndex, barIndex, noteIndex, chord })"
       />
     </span>
