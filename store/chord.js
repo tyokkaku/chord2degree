@@ -23,10 +23,10 @@ export const actions = {
   },
   removePartAt: ({ commit }, payload) => {
     commit('removePart', payload)
+  },
+  removeBarAt: ({ commit }, payload) => {
+    commit('removeBar', payload)
   }
-  // setTonicAt: ({ commit }, payload) => {
-  //   commit('setTonic', payload)
-  // }
 }
 
 export const mutations = {
@@ -53,11 +53,10 @@ export const mutations = {
   },
   removePart: (state, partIndex) => {
     state.score.splice(partIndex, 1)
+  },
+  removeBar: (state, partIndex) => {
+    state.score[partIndex].bars.pop()
   }
-  // setTonic: (state, { partIndex, partTonic }) => {
-  //   console.log(partIndex, partTonic)
-  //   Vue.set(state.score[partIndex], 'tonic', partTonic)
-  // }
 }
 
 export const getters = {}

@@ -4,6 +4,7 @@
       pTonic:<input v-model="partTonic" type="text" />
     </span>
     <button @click="addBarAt(partIndex)">Add Bar++</button>
+    <button @click="removeBarAt(partIndex)">Remove Bar--</button>
     <!-- <h1 class="is-size-6">{{ part.name }}</h1> -->
     <div class="columns is-multiline">
       <Bar
@@ -57,7 +58,8 @@ export default {
     ...mapActions('chord', {
       addBarAt: 'addBarAt',
       addPartAt: 'addPartAt',
-      removePartAt: 'removePartAt'
+      removePartAt: 'removePartAt',
+      removeBarAt: 'removeBarAt'
     })
   }
 }
