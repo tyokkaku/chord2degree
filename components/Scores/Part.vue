@@ -1,7 +1,7 @@
 <template>
   <div class="partContainer">
+    <!-- <span class="is-size-5 bold">{{ part.name }}</span> -->
     <div v-if="showContents.includes('addRemBarButton')">
-      <span class="is-size-5 bold">{{ part.name }}</span>
       <span v-if="showContents.includes('partTonicInput')">
         pTonic:<input v-model="partTonic" type="text" />
       </span>

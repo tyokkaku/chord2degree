@@ -5,7 +5,14 @@
     </div>
     <div style="clear: both">
       <h1 class="is-size-3 has-text-centered	">Title</h1>
-      <div><span>tonic:</span> <input v-model="defaultTonic" /></div>
+      <div>
+        <span class="is-size-6" style="vertical-align: middle">Tonic</span>
+        <input
+          v-model="defaultTonic"
+          style="width:50px"
+          class="input is-small"
+        />
+      </div>
       <Part
         v-for="(part, partIndex) in score"
         :key="part.id"
