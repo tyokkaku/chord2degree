@@ -1,11 +1,13 @@
 <template>
   <div class="column">
     <div class="is-size-5">{{ note }}</div>
-    <input
-      v-model="chord"
-      type="text"
-      @input="editNoteAt({ partIndex, barIndex, noteIndex, chord })"
-    />
+    <span v-if="showContents.includes('chordButton')">
+      <input
+        v-model="chord"
+        type="text"
+        @input="editNoteAt({ partIndex, barIndex, noteIndex, chord })"
+      />
+    </span>
   </div>
 </template>
 
@@ -29,6 +31,10 @@ export default {
     noteIndex: {
       required: true,
       type: Number
+    },
+    showContents: {
+      required: true,
+      type: Array
     }
   },
   data() {

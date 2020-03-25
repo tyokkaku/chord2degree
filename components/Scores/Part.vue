@@ -18,8 +18,24 @@
         :show-contents="showContents"
       />
     </div>
-    <button @click="addPartAt(partIndex)">Add Part ++</button>
-    <button @click="removePartAt(partIndex)">Rem Part --</button>
+    <button
+      class="button is-small is-success is-light"
+      @click="addPartAt(partIndex)"
+    >
+      <span class="bold">
+        PART
+      </span>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <button
+      class="button is-small is-danger is-light"
+      @click="removePartAt(partIndex)"
+    >
+      <span class="bold">
+        PART
+      </span>
+      <ion-icon name="close"></ion-icon>
+    </button>
   </div>
 </template>
 

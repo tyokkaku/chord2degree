@@ -1,9 +1,11 @@
 <template>
   <div class="column is-one-quarter bar">
-    <button @click="addNoteAt({ partIndex, barIndex })">Add Note++</button>
-    <button @click="removeNoteAt({ partIndex, barIndex })">
-      Remove Note--
-    </button>
+    <span v-if="showContents.includes('addRemNoteButton')">
+      <button @click="addNoteAt({ partIndex, barIndex })">Add Note++</button>
+      <button @click="removeNoteAt({ partIndex, barIndex })">
+        Remove Note--
+      </button>
+    </span>
     <!-- <span>bTonic:</span> <input v-model="barTonic" /> -->
     <span v-if="showContents.includes('barTonicInput')">
       bTonic:<input v-model="barTonic" type="text" />
@@ -16,6 +18,7 @@
         :part-index="partIndex"
         :bar-index="barIndex"
         :note-index="noteIndex"
+        :show-contents="showContents"
       />
     </div>
   </div>
