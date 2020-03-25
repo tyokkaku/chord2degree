@@ -49,13 +49,6 @@ export const mutations = {
         ['', '']
       ])
     )
-
-    // state.score.push(
-    //   createPart(nextId, '', [
-    //     ['', ''],
-    //     ['', '']
-    //   ])
-    // )
   },
   appendBar: (state, partIndex) => {
     state.score[partIndex].bars.push(['', ''])
