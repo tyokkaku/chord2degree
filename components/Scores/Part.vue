@@ -1,10 +1,26 @@
 <template>
   <div class="partContainer">
-    <!-- <span class="is-size-5 bold">{{ part.name }}</span> -->
+    <span class="is-size-5 bold verticalAlignMiddle">{{ part.name }}</span>
+    <span>
+      <div class="select is-small">
+        <select
+          v-model="partName"
+          @change="setPartNameAt({ partIndex, partName })"
+        >
+          <option disabled value="">Please select one</option>
+          <option>Intro</option>
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+          <option>サビ</option>
+          <option>間奏</option>
+          <option>Outro</option>
+        </select>
+      </div>
+    </span>
     <span
       v-if="showContents.includes('partTonicInput')"
-      class="is-size-6"
-      style="vertical-align: middle"
+      class="is-size-6 verticalAlignMiddle"
     >
       Part Tonic:
       <input
@@ -95,7 +111,8 @@ export default {
   },
   data() {
     return {
-      partTonic: ''
+      partTonic: '',
+      partName: ''
     }
   },
   methods: {
@@ -103,7 +120,8 @@ export default {
       addBarAt: 'addBarAt',
       addPartAt: 'addPartAt',
       removePartAt: 'removePartAt',
-      removeBarAt: 'removeBarAt'
+      removeBarAt: 'removeBarAt',
+      setPartNameAt: 'setPartNameAt'
     })
   }
 }

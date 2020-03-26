@@ -29,6 +29,9 @@ export const actions = {
   },
   removeNoteAt: ({ commit }, payload) => {
     commit('removeNote', payload)
+  },
+  setPartNameAt: ({ commit }, payload) => {
+    commit('setPartName', payload)
   }
 }
 
@@ -67,6 +70,11 @@ export const mutations = {
   },
   removeNote: (state, { partIndex, barIndex }) => {
     state.score[partIndex].bars[barIndex].pop()
+  },
+  setPartName: (state, { partIndex, partName }) => {
+    console.log(partIndex)
+    console.log(partName)
+    Vue.set(state.score[partIndex], 'name', partName)
   }
 }
 
