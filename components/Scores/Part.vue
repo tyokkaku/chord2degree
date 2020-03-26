@@ -1,6 +1,8 @@
 <template>
   <div class="partContainer">
-    <span class="is-size-5 bold verticalAlignMiddle">{{ part.name }}</span>
+    <span class="is-size-5 bold verticalAlignMiddle" :class="partNameColor">{{
+      part.name
+    }}</span>
     <span>
       <div class="select is-small">
         <select
@@ -113,6 +115,29 @@ export default {
     return {
       partTonic: '',
       partName: ''
+    }
+  },
+  computed: {
+    partNameColor() {
+      const part = this.part.name
+
+      if (part === 'Intro') {
+        return 'intro'
+      } else if (part === 'A') {
+        return 'a'
+      } else if (part === 'B') {
+        return 'b'
+      } else if (part === 'C') {
+        return 'c'
+      } else if (part === 'サビ') {
+        return 'sabi'
+      } else if (part === '間奏') {
+        return 'kansou'
+      } else if (part === 'Outro') {
+        return 'outro'
+      } else {
+        return ''
+      }
     }
   },
   methods: {

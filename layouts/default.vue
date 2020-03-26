@@ -9,5 +9,6 @@ html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
   padding: 0 12.5%;
+  background-color: #fdfdfd;
 }
 </style>
