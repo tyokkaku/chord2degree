@@ -29,8 +29,11 @@
       <span
         v-if="showContents.includes('barTonicInput')"
         class="is-size-6"
-        style="vertical-align: middle; float:right"
+        style="float:right"
       >
+        <span style="vertical-align: middle">
+          Bar Tonic:
+        </span>
         <input
           v-model="barTonic"
           type="text"
@@ -47,7 +50,6 @@ import { mapActions } from 'vuex'
 import { Progression } from '@tonaljs/tonal'
 import Note from '~/components/Scores/Note'
 
-// style="display: flex; flex-direction: column; lex-wrap: wrap; margin-right: 10px"
 export default {
   components: {
     Note

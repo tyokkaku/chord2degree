@@ -1,10 +1,20 @@
 <template>
   <div class="partContainer">
     <!-- <span class="is-size-5 bold">{{ part.name }}</span> -->
-    <div v-if="showContents.includes('addRemBarButton')">
-      <span v-if="showContents.includes('partTonicInput')">
-        pTonic:<input v-model="partTonic" type="text" />
-      </span>
+    <span
+      v-if="showContents.includes('partTonicInput')"
+      class="is-size-6"
+      style="vertical-align: middle"
+    >
+      Part Tonic:
+      <input
+        v-model="partTonic"
+        type="text"
+        style="width: 50px; "
+        class="input is-small is-rounded"
+      />
+    </span>
+    <span v-if="showContents.includes('addRemBarButton')">
       <button
         class="button is-small is-success is-light"
         @click="addBarAt(partIndex)"
@@ -17,7 +27,7 @@
       >
         Bar <ion-icon name="close" />
       </button>
-    </div>
+    </span>
     <div
       class="columns is-multiline"
       style="margin-top: calc(1.5rem - 0.75rem)"
@@ -34,7 +44,7 @@
       />
     </div>
 
-    <div v-if="showContents.includes('addRemPartButton')" style="float:right">
+    <span v-if="showContents.includes('addRemPartButton')" style="float:right">
       <button
         class="button is-small is-success is-light"
         @click="addPartAt(partIndex)"
@@ -53,7 +63,7 @@
         </span>
         <ion-icon name="close" />
       </button>
-    </div>
+    </span>
   </div>
 </template>
 

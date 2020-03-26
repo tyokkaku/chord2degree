@@ -18,6 +18,14 @@ export default {
     script: [{ src: 'https://unpkg.com/ionicons/dist/ionicons.js', body: true }]
   },
   /*
+   ** Surver for Mobile
+   */
+  // server: {
+  //   port: 3000, // デフォルト: 3000
+  //   host: '0.0.0.0', // デフォルト: localhost,
+  //   timing: false
+  // },
+  /*
    ** Customize the progress-bar color
    */
   loading: { color: '#fff' },
