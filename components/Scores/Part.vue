@@ -1,10 +1,16 @@
 <template>
   <div class="partContainer">
-    <span class="is-size-5 bold verticalAlignMiddle" :class="partNameColor">{{
-      part.name
-    }}</span>
+    <span
+      v-if="showContents.includes('partNameLabel')"
+      class="is-size-5 bold verticalAlignMiddle"
+      :class="partNameColor"
+      >{{ part.name }}</span
+    >
     <span>
-      <div class="select is-small">
+      <div
+        v-if="showContents.includes('partSelectBox')"
+        class="select is-small"
+      >
         <select
           v-model="partName"
           @change="setPartNameAt({ partIndex, partName })"

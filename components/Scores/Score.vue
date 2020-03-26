@@ -1,10 +1,12 @@
 <template>
   <div style="margin-bottom: 200px">
-    <div class="toggleButtonArea">
-      <ToggleButtonArea :toggle="toggle" />
+    <div style="overflow: hidden">
+      <div class="toggleButtonArea">
+        <ToggleButtonArea :toggle="toggle" />
+      </div>
     </div>
-    <div style="clear: both">
-      <h1 class="is-size-3 has-text-centered	">Title</h1>
+    <div style="clear: both; margin-top: 80px">
+      <h1 class="is-size-3 has-text-centered">Title</h1>
       <div>
         <span class="is-size-6" style="vertical-align: middle">Tonic</span>
         <input
@@ -38,7 +40,13 @@ export default {
   data() {
     return {
       defaultTonic: 'C',
-      showContents: ['chordButton', 'addRemPartButton', 'addRemBarButton']
+      showContents: [
+        'chordButton',
+        'addRemPartButton',
+        'addRemBarButton',
+        'partNameLabel',
+        'partSelectBox'
+      ]
     }
   },
   computed: {

@@ -45,6 +45,29 @@
       </div>
     </div>
 
+    <div class="wrapper">
+      <div class="field">
+        <input
+          id="partName"
+          type="checkbox"
+          checked="checked"
+          class="switch is-thin"
+          @click="toggle('partNameLabel')"
+        />
+        <label for="partName">Part Name</label>
+      </div>
+      <div class="field">
+        <input
+          id="partSelect"
+          type="checkbox"
+          class="switch is-thin"
+          checked="checked"
+          @click="toggle('partSelectBox')"
+        />
+        <label for="partSelect">Part Select</label>
+      </div>
+    </div>
+
     <div>
       <div class="field">
         <input
