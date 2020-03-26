@@ -7,7 +7,7 @@
           v-model="partName"
           @change="setPartNameAt({ partIndex, partName })"
         >
-          <option disabled value="">Plz select</option>
+          <option disabled value="">Please select</option>
           <option>Intro</option>
           <option>A</option>
           <option>B</option>
