@@ -16,13 +16,13 @@
         <ion-icon
           style="font-size: 15px; cursor:pointer; vertical-align: middle"
           class="has-text-success"
-          name="add-circle-outline"
+          name="add"
           @click="addNoteAt({ partIndex, barIndex })"
         />
         <ion-icon
           style="font-size: 15px; cursor:pointer; vertical-align: middle"
           class="has-text-danger"
-          name="remove-circle-outline"
+          name="remove"
           @click="removeNoteAt({ partIndex, barIndex })"
         />
       </span>

@@ -39,18 +39,18 @@
       />
     </span>
     <span v-if="showContents.includes('addRemBarButton')">
-      <button
-        class="button is-small is-success is-light"
+      <ion-icon
+        style="font-size: 22px; cursor:pointer; vertical-align: middle"
+        name="add-circle-outline"
+        class="has-text-success"
         @click="addBarAt(partIndex)"
-      >
-        Bar <ion-icon name="add" />
-      </button>
-      <button
-        class="button is-small is-danger is-light"
+      />
+      <ion-icon
+        style="font-size: 22px; cursor:pointer; vertical-align: middle"
+        name="remove-circle-outline"
+        class="has-text-danger"
         @click="removeBarAt(partIndex)"
-      >
-        Bar <ion-icon name="close" />
-      </button>
+      />
     </span>
     <div
       class="columns is-multiline"
@@ -69,7 +69,7 @@
     </div>
 
     <span v-if="showContents.includes('addRemPartButton')" style="float:right">
-      <button
+      <!-- <button
         class="button is-small is-success is-light"
         @click="addPartAt(partIndex)"
       >
@@ -77,7 +77,21 @@
           PART
         </span>
         <ion-icon name="add" />
-      </button>
+      </button> -->
+
+      <ion-icon
+        style="font-size: 30px; cursor:pointer; vertical-align: middle"
+        name="add-circle"
+        class="has-text-success"
+        @click="addPartAt(partIndex)"
+      />
+      <ion-icon
+        style="font-size: 30px; cursor:pointer; vertical-align: middle"
+        name="close-circle"
+        class="has-text-danger"
+        @click="removePartAt(partIndex)"
+      />
+      <!--
       <button
         class="button is-small is-danger is-light"
         @click="removePartAt(partIndex)"
@@ -86,7 +100,7 @@
           PART
         </span>
         <ion-icon name="close" />
-      </button>
+      </button> -->
     </span>
   </div>
 </template>
