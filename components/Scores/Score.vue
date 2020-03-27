@@ -9,7 +9,6 @@
         ></ion-icon>
       </div>
     </div>
-    <!-- <button /> -->
     <div
       v-if="showContents.includes('configButton')"
       class="score-controls-wrapper"
