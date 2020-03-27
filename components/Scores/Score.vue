@@ -40,7 +40,7 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import Part from '~/components/Scores/Part'
-import ScoreControls from '~/components/ScoreControls/ScoreControls'
+import ScoreControls from '~/components/scoreControls/ScoreControl'
 
 export default {
   components: {
