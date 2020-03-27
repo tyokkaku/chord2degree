@@ -1,73 +1,83 @@
 <template>
-  <div class="partContainer">
-    <span
-      v-if="showContents.includes('partNameLabel')"
-      class="is-size-6 bold verticalAlignMiddle"
-      :class="partNameColor"
-      >{{ part.name }}</span
-    >
-    <span>
-      <div
-        v-if="showContents.includes('partSelectBox')"
-        class="select is-small"
-      >
-        <select
-          v-model="partName"
-          @change="setPartNameAt({ partIndex, partName })"
+  <div class="part">
+    <div class="part-controls">
+      <!-- Part Name -->
+      <span
+        v-if="showContents.includes('partNameLabel')"
+        class="part-name is-size-6 bold"
+        :class="partNameColor"
+        >{{ part.name }}
+      </span>
+      <!-- Part Select -->
+      <span class="part-select">
+        <div
+          v-if="showContents.includes('partSelectBox')"
+          class="select is-small"
         >
-          <option disabled value="">Please select one</option>
-          <option>Intro</option>
-          <option>A</option>
-          <option>B</option>
-          <option>C</option>
-          <option>サビ</option>
-          <option>間奏</option>
-          <option>Outro</option>
-        </select>
-      </div>
-    </span>
-    <span
-      v-if="showContents.includes('partTonicInput')"
-      class="is-size-6 verticalAlignMiddle"
-    >
-      Part Tonic:
-      <input
-        v-model="partTonic"
-        type="text"
-        style="width: 50px; "
-        class="input is-small is-rounded"
-      />
-    </span>
-    <span v-if="showContents.includes('addRemBarButton')">
-      <ion-icon
-        style="font-size: 22px; cursor:pointer; vertical-align: middle"
-        name="add-circle-outline"
-        class="has-text-success"
-        @click="addBarAt(partIndex)"
-      />
-      <ion-icon
-        style="font-size: 22px; cursor:pointer; vertical-align: middle"
-        name="remove-circle-outline"
-        class="has-text-danger"
-        @click="removeBarAt(partIndex)"
-      />
-    </span>
-    <span v-if="showContents.includes('addRemPartButton')" style="float:right">
-      <ion-icon
-        style="font-size: 30px; cursor:pointer; vertical-align: middle"
-        name="add-circle"
-        class="has-text-success"
-        @click="addPartAt(partIndex)"
-      />
-      <ion-icon
-        style="font-size: 30px; cursor:pointer; vertical-align: middle"
-        name="close-circle"
-        class="has-text-danger"
-        @click="removePartAt(partIndex)"
-      />
-    </span>
+          <select
+            v-model="partName"
+            @change="setPartNameAt({ partIndex, partName })"
+          >
+            <option disabled value="">Please select one</option>
+            <option>Intro</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>サビ</option>
+            <option>間奏</option>
+            <option>Outro</option>
+          </select>
+        </div>
+      </span>
 
-    <div class="columns is-multiline is-mobile" style="margin-top: 0px">
+      <!-- Part Tonic -->
+      <span
+        v-if="showContents.includes('partTonicInput') || partTonic"
+        style=""
+        class="part-tonic is-size-6"
+      >
+        <input
+          v-model="partTonic"
+          type="text"
+          class="input is-small is-rounded"
+          placeholder="Key"
+        />
+      </span>
+
+      <!-- Bar Add/Rem -->
+      <span v-if="showContents.includes('addRemBarButton')" class="bar-add-rem">
+        <ion-icon
+          name="add-circle-outline"
+          class="has-text-success"
+          @click="addBarAt(partIndex)"
+        />
+        <ion-icon
+          name="remove-circle-outline"
+          class="has-text-danger"
+          @click="removeBarAt(partIndex)"
+        />
+      </span>
+
+      <!-- Part Add/Rem -->
+      <span
+        v-if="showContents.includes('addRemPartButton')"
+        class="part-add-rem"
+      >
+        <ion-icon
+          name="add-circle"
+          class="has-text-success"
+          @click="addPartAt(partIndex)"
+        />
+        <ion-icon
+          name="close-circle"
+          class="has-text-danger"
+          @click="removePartAt(partIndex)"
+        />
+      </span>
+    </div>
+
+    <!-- Bar -->
+    <div class="bar-wrapper columns is-multiline is-mobile">
       <Bar
         v-for="(bar, barIndex) in part.bars"
         :key="barIndex"
@@ -149,7 +159,4 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-.partContainer
-  margin-top: 40px
-</style>
+<style lang="sass" scoped></style>

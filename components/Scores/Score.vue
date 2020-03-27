@@ -1,19 +1,15 @@
 <template>
-  <div style="margin-bottom: 200px">
-    <div style="overflow: hidden">
-      <div class="toggleButtonArea">
-        <ToggleButtonArea :toggle="toggle" />
+  <div class="score">
+    <div class="score-controls-wrapper">
+      <div class="score-controls">
+        <ScoreControls :toggle="toggle" />
       </div>
     </div>
-    <div style="clear: both; margin-top: 80px">
+    <div class="score-display">
       <h1 class="is-size-3 has-text-centered">Title</h1>
-      <div>
-        <span class="is-size-6" style="vertical-align: middle">Tonic</span>
-        <input
-          v-model="defaultTonic"
-          style="width:50px;"
-          class="input is-small is-rounded"
-        />
+      <div class="score-tonic">
+        <span class="is-size-6">Key</span>
+        <input v-model="defaultTonic" class="input is-small is-rounded" />
       </div>
       <Part
         v-for="(part, partIndex) in score"
@@ -30,12 +26,12 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import Part from '~/components/Scores/Part'
-import ToggleButtonArea from '~/components/toglleButton/toggleButtonArea'
+import ScoreControls from '~/components/ScoreControls/ScoreControls'
 
 export default {
   components: {
     Part,
-    ToggleButtonArea
+    ScoreControls
   },
   data() {
     return {
@@ -69,7 +65,4 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-.toggleButtonArea
-  float: right
-</style>
+<style lang="sass" scoped></style>

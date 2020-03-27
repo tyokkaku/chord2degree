@@ -71,8 +71,6 @@ export const mutations = {
     state.score[partIndex].bars[barIndex].pop()
   },
   setPartName: (state, { partIndex, partName }) => {
-    console.log(partIndex)
-    console.log(partName)
     Vue.set(state.score[partIndex], 'name', partName)
   }
 }

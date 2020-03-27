@@ -1,19 +1,13 @@
 <template>
-  <div class="column is-one-fifths" style="padding: 10px; padding-bottom: 4px">
-    <span
-      class="bold"
-      style="font-size: 15px;font-family: 'Noto Serif JP', serif;"
-      >{{ note }}</span
-    >
-    <span v-if="showContents.includes('chordButton')">
-      <input
-        v-model="chord"
-        type="text"
-        style="width:40px; padding: 5px 5px"
-        class="input is-small"
-        @input="editNoteAt({ partIndex, barIndex, noteIndex, chord })"
-      />
-    </span>
+  <div class="note column is-one-fifths">
+    <span class="note-degree bold">{{ note }}</span>
+    <input
+      v-if="showContents.includes('chordButton')"
+      v-model="chord"
+      type="text"
+      class="note-input input is-small"
+      @input="editNoteAt({ partIndex, barIndex, noteIndex, chord })"
+    />
   </div>
 </template>
 
@@ -56,8 +50,4 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-input
-  height: 25px
-  width: 25px
-</style>
+<style lang="sass" scoped></style>
