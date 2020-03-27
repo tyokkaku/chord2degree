@@ -1,5 +1,8 @@
 <template>
-  <div class="column is-one-quarter bar" style="margin-top: 10px">
+  <div
+    class="column is-one-quarter bar"
+    style="margin-top: 10px; padding-bottom: 5px"
+  >
     <div class="columns is-mobile is-desktop is-multiline">
       <Note
         v-for="(note, noteIndex) in bar"
@@ -107,7 +110,10 @@ export default {
 
 <style lang="sass" scoped>
 .bar
-  border-left: 1px solid #ccc
+  border-right: 1px dotted gray
+  border-bottom: 1px dotted gray
   &:nth-child(4n)
+    border-right: 0px solid #ccc
+  &:last-child
     border-right: 1px solid #ccc
 </style>

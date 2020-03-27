@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import initialScore from '~/data/initialScore'
-// import initialPart from '~/data/initialPart'
 // import testScore from '~/data/testScore'
 import createPart from '~/data/util/createPart'
 
