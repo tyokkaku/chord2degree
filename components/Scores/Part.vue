@@ -30,20 +30,6 @@
         </div>
       </span>
 
-      <!-- Part Tonic -->
-      <span
-        v-if="showContents.includes('partTonicInput') || partTonic"
-        style=""
-        class="part-tonic is-size-6"
-      >
-        <input
-          v-model="partTonic"
-          type="text"
-          class="input is-small is-rounded"
-          placeholder="Key"
-        />
-      </span>
-
       <!-- Bar Add/Rem -->
       <span v-if="showContents.includes('addRemBarButton')" class="bar-add-rem">
         <ion-icon
@@ -73,6 +59,15 @@
           class="has-text-danger"
           @click="removePartAt(partIndex)"
         />
+      </span>
+
+      <!-- Part Tonic -->
+      <span
+        v-if="showContents.includes('partTonicInput') || partTonic"
+        style=""
+        class="part-tonic is-size-6"
+      >
+        <input v-model="partTonic" type="text" placeholder="Key" />
       </span>
     </div>
 

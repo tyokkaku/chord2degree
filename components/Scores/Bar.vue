@@ -35,12 +35,7 @@
         v-if="showContents.includes('barTonicInput')"
         class="bar-tonic is-size-6"
       >
-        <input
-          v-model="barTonic"
-          type="text"
-          class="input is-small is-rounded"
-          placeholder="Key"
-        />
+        <input v-model="barTonic" type="text" placeholder="Key" />
       </span>
     </div>
   </div>

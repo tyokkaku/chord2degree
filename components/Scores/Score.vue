@@ -8,8 +8,9 @@
     <div class="score-display">
       <h1 class="is-size-3 has-text-centered">Title</h1>
       <div class="score-tonic">
-        <span class="is-size-6">Key</span>
-        <input v-model="defaultTonic" class="input is-small is-rounded" />
+        <span class="is-size-6">Key:</span>
+        <!-- <input v-model="defaultTonic" class="input is-small is-rounded" /> -->
+        <input v-model="defaultTonic" placeholder="Key" />
       </div>
       <Part
         v-for="(part, partIndex) in score"
