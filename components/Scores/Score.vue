@@ -1,6 +1,18 @@
 <template>
   <div class="score">
-    <div class="score-controls-wrapper">
+    <div class="config-button-wrapper">
+      <div class="config-button">
+        <ion-icon
+          class="icon is-medium"
+          name="settings-outline"
+          @click="toggle('configButton')"
+        ></ion-icon>
+      </div>
+    </div>
+    <div
+      v-if="showContents.includes('configButton')"
+      class="score-controls-wrapper"
+    >
       <div class="score-controls">
         <ScoreControls :toggle="toggle" />
       </div>
@@ -39,6 +51,7 @@ export default {
     return {
       defaultTonic: 'C',
       showContents: [
+        'configButton',
         'chordButton',
         'addRemPartButton',
         'addRemBarButton',
