@@ -25,4 +25,6 @@ export default {
 <style lang="sass" scoped>
 .container
   margin-bottom: 20%
+  h1
+    color: gray
 </style>
