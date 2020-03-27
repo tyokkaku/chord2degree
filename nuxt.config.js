@@ -14,8 +14,17 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [{ src: 'https://unpkg.com/ionicons/dist/ionicons.js', body: true }]
   },
+  /*
+   ** Surver for Mobile
+   */
+  // server: {
+  //   port: 3000, // デフォルト: 3000
+  //   host: '0.0.0.0', // デフォルト: localhost,
+  //   timing: false
+  // },
   /*
    ** Customize the progress-bar color
    */
@@ -23,11 +32,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/sass/index.sass'],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/webcomponent.js'],
   /*
    ** Nuxt.js dev-modules
    */
