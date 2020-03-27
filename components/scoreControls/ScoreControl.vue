@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import ToggleButton from '~/components/ScoreControls/toggleButton'
+import ToggleButton from '~/components/scoreControls/toggleButton'
 
 export default {
   components: {
