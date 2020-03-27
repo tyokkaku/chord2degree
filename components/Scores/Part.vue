@@ -2,7 +2,7 @@
   <div class="partContainer">
     <span
       v-if="showContents.includes('partNameLabel')"
-      class="is-size-5 bold verticalAlignMiddle"
+      class="is-size-6 bold verticalAlignMiddle"
       :class="partNameColor"
       >{{ part.name }}</span
     >
@@ -52,33 +52,7 @@
         @click="removeBarAt(partIndex)"
       />
     </span>
-    <div
-      class="columns is-multiline"
-      style="margin-top: calc(1.5rem - 0.75rem)"
-    >
-      <Bar
-        v-for="(bar, barIndex) in part.bars"
-        :key="barIndex"
-        :bar="bar"
-        :part-index="partIndex"
-        :part-tonic="partTonic"
-        :bar-index="barIndex"
-        :default-tonic="defaultTonic"
-        :show-contents="showContents"
-      />
-    </div>
-
     <span v-if="showContents.includes('addRemPartButton')" style="float:right">
-      <!-- <button
-        class="button is-small is-success is-light"
-        @click="addPartAt(partIndex)"
-      >
-        <span class="bold">
-          PART
-        </span>
-        <ion-icon name="add" />
-      </button> -->
-
       <ion-icon
         style="font-size: 30px; cursor:pointer; vertical-align: middle"
         name="add-circle"
@@ -91,17 +65,20 @@
         class="has-text-danger"
         @click="removePartAt(partIndex)"
       />
-      <!--
-      <button
-        class="button is-small is-danger is-light"
-        @click="removePartAt(partIndex)"
-      >
-        <span class="bold">
-          PART
-        </span>
-        <ion-icon name="close" />
-      </button> -->
     </span>
+
+    <div class="columns is-multiline is-mobile" style="margin-top: 0px">
+      <Bar
+        v-for="(bar, barIndex) in part.bars"
+        :key="barIndex"
+        :bar="bar"
+        :part-index="partIndex"
+        :part-tonic="partTonic"
+        :bar-index="barIndex"
+        :default-tonic="defaultTonic"
+        :show-contents="showContents"
+      />
+    </div>
   </div>
 </template>
 
@@ -174,5 +151,5 @@ export default {
 
 <style lang="sass" scoped>
 .partContainer
-  margin-top: 50px
+  margin-top: 40px
 </style>

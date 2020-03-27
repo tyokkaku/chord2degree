@@ -1,10 +1,10 @@
 import Vue from 'vue'
-// import initialScore from '~/data/initialScore'
-import testScore from '~/data/testScore'
+import initialScore from '~/data/initialScore'
+// import testScore from '~/data/testScore'
 import createPart from '~/data/util/createPart'
 
 export const state = {
-  score: testScore
+  score: initialScore
 }
 
 export const actions = {
